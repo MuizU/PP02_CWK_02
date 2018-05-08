@@ -10,11 +10,13 @@
         android:id="@+id/textView"
         android:layout_width="66dp"
         android:layout_height="36dp"
-        android:lineSpacingExtra="10sp"
+        android:fontFamily="@font/roboto_thin"
         android:text="Login"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textSize="24sp"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="55dp" />
+        tools:layout_editor_absoluteY="55dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView2"
@@ -22,10 +24,11 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_thin"
         android:text="Email"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="18sp"
-        android:textStyle="bold"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="140dp" />
+        tools:layout_editor_absoluteY="140dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editText"
@@ -36,5 +39,40 @@
         android:hint="someone@example.com"
         android:inputType="textEmailAddress"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="172dp" />
+        tools:layout_editor_absoluteY="172dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_thin"
+        android:text="Password"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="245dp" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="********"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="298dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="152dp"
+        android:layout_height="49dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="Sign in"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="410dp" />
+
 </android.support.constraint.ConstraintLayout>
