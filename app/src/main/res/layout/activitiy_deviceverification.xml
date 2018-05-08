@@ -5,30 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="65dp"
-        android:fontFamily="@font/roboto_thin"
-        android:text="@string/Label"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/editText2"
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="115dp"
         android:ems="10"
+        android:fontFamily="@font/roboto_thin"
         android:inputType="text|textNoSuggestions|textPostalAddress|textVisiblePassword|number|numberSigned|numberDecimal"
         android:text="@string/Suggestion"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -38,8 +27,8 @@
         android:layout_marginBottom="191dp"
         android:layout_marginEnd="68dp"
         android:background="?attr/actionModeSplitBackground"
+        android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/next_button"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/next_button" />
 </android.support.constraint.ConstraintLayout>

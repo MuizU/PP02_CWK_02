@@ -7,6 +7,6 @@
     <string name="Password">********</string>
     <string name="someone_example_com">someone@example.com</string>
     <string name="Label">Enter Device ID</string>
-    <string name="Suggestion">Enter ID</string>
+    <string name="Suggestion">Enter the Device ID: </string>
     <string name="todo">TODO</string>
 </resources>
