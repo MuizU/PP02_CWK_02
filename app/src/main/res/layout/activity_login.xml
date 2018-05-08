@@ -4,19 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="66dp"
-        android:layout_height="36dp"
+        android:layout_height="45dp"
         android:fontFamily="@font/roboto_thin"
         android:text="Login"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textSize="24sp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="55dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="35dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -26,21 +27,21 @@
         android:text="Email"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="18sp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="140dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="137dp" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="255dp"
-        android:layout_height="44dp"
+        android:layout_height="45dp"
         android:ems="10"
         android:fontFamily="@font/roboto_thin"
         android:hint="someone@example.com"
         android:inputType="textEmailAddress"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="172dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="179dp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -51,7 +52,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="245dp" />
+        tools:layout_editor_absoluteY="253dp" />
 
     <EditText
         android:id="@+id/editText3"
@@ -61,18 +62,19 @@
         android:hint="********"
         android:inputType="textPassword"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="298dp" />
+        tools:layout_editor_absoluteY="304dp" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="152dp"
-        android:layout_height="49dp"
+        android:layout_height="45dp"
         android:fontFamily="@font/roboto_thin"
         android:text="Sign in"
         android:textSize="18sp"
         android:textStyle="bold"
         android:visibility="visible"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="410dp" />
+        tools:layout_editor_absoluteY="416dp" />
 
 </android.support.constraint.ConstraintLayout>
