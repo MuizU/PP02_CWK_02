@@ -1,9 +1,12 @@
 <resources>
-    <string name="app_name">AssaultPrevention</string>
+    <string name="app_name">AssaultPreventionForUsers</string>
     <string name="login">Login</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="sign_in">Sign in</string>
     <string name="Password">********</string>
     <string name="someone_example_com">someone@example.com</string>
+    <string name="Label">Enter Device ID</string>
+    <string name="Suggestion">Enter ID</string>
+    <string name="todo">TODO</string>
 </resources>
