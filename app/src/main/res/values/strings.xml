@@ -24,4 +24,5 @@
         completions."
     </string>
     <string name="register">click_here_to_register</string>
+    <string name="email">Email</string>
 </resources>
