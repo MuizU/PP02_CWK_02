@@ -27,8 +27,7 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".LoginActivity" />
-        <activity android:name=".RegistrationActivity" />
-        <activity android:name=".MapActivity"></activity>
+        <activity android:name=".RegistrationActivity"></activity>
     </application>
 
 </manifest>
