@@ -17,8 +17,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        et_email = findViewById(R.id.email);
-        et_password = findViewById(R.id.password);
+        et_email = findViewById(R.id.input_email);
+        et_password = findViewById(R.id.input_password);
         auth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
 
