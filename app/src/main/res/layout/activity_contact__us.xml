@@ -34,7 +34,8 @@
         android:id="@+id/textView3"
         android:layout_width="190dp"
         android:layout_height="72dp"
-        android:text="TextView"
+        android:text="neg"
         tools:layout_editor_absoluteX="39dp"
         tools:layout_editor_absoluteY="59dp" />
+
 </android.support.constraint.ConstraintLayout>
