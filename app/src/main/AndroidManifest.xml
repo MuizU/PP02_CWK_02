@@ -28,7 +28,10 @@
 
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegistrationActivity" />
-        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".FAQ" />
+        <activity android:name=".Contact_Us"></activity>
     </application>
 
 </manifest>
