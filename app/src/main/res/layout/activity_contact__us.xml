@@ -4,40 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Contact_Us"
-    tools:layout_editor_absoluteY="81dp">
-
+    tools:context=".Contact_Us">
     <ImageView
         android:id="@+id/logo1"
-        android:layout_width="85sp"
-        android:layout_height="97sp"
+        android:layout_width="96dp"
+        android:layout_height="97dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/logo"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="166dp" />
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="410dp" />
 
     <ImageView
         android:id="@+id/logo2"
-        android:layout_width="85sp"
-        android:layout_height="97sp"
+        android:layout_width="96dp"
+        android:layout_height="97dp"
         app:srcCompat="@drawable/logo"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="166dp" />
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="410dp" />
 
     <ImageView
         android:id="@+id/logo3"
-        android:layout_width="85sp"
-        android:layout_height="97sp"
+        android:layout_width="96dp"
+        android:layout_height="97dp"
         app:srcCompat="@drawable/logo"
-        tools:layout_editor_absoluteX="253dp"
-        tools:layout_editor_absoluteY="166dp" />
+        tools:layout_editor_absoluteX="250dp"
+        tools:layout_editor_absoluteY="410dp" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="263sp"
-        android:layout_height="74sp"
-        android:text="feel free to provide any feedback of issues"
-        android:textSize="20sp"
+        android:layout_width="190dp"
+        android:layout_height="72dp"
+        android:text="neg"
         tools:layout_editor_absoluteX="39dp"
         tools:layout_editor_absoluteY="59dp" />
 
