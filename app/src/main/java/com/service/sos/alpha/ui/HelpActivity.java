@@ -1,13 +1,15 @@
-package com.service.sos.alpha;
+package com.service.sos.alpha.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Contact_Us extends AppCompatActivity {
+import com.service.sos.alpha.R;
+
+public class HelpActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact__us);
+        setContentView(R.layout.activity_help);
     }
 }

@@ -1,4 +1,4 @@
-package com.service.sos.alpha;
+package com.service.sos.alpha.ui;
 
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.service.sos.alpha.R;
 
 public class LoginActivity extends AppCompatActivity {
     EditText et_email, et_password;
