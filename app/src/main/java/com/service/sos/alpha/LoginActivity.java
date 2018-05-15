@@ -30,6 +30,5 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.setMessage("Signing in....");
         progressDialog.show();
 
-
     }
 }
