@@ -17,4 +17,21 @@
     <string name="action_settings">Settings</string>
     <string name="register">click_here_to_register</string>
     <string name="email">Email</string>
+    <string name="map">View Friends </string>
+    <string name="help_and_support">Help and Support</string>
+    <string name="log_out">log out</string>
+    <string name="settings">Settings</string>
+    <string name="my_account">My Account</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="title_activity_ex">Ex</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="chat">Chat</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
