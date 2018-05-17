@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="81dp"
             android:gravity="center"
-            android:text="Invite Friends"
+            android:text="Invite a Friend"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

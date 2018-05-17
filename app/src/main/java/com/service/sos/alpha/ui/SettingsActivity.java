@@ -49,7 +49,7 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
                 shareIntent.setType("text/plain");
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Assault Prevention Device");
                 shareIntent.putExtra(Intent.EXTRA_TEXT, "http://www.google.com");
-                startActivity(Intent.createChooser(shareIntent, "Share URL"));
+                startActivity(Intent.createChooser(shareIntent, "Invite a friend via..."));
             }
         });
 
