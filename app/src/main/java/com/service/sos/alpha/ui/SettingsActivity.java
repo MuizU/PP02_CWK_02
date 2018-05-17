@@ -73,8 +73,8 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
             Intent help = new Intent(SettingsActivity.this, HelpActivity.class);
             startActivity(help);
         } else if (id == R.id.nav_logout) {
-            Intent log = new Intent(SettingsActivity.this, LoginActivity.class);
-            startActivity(log);
+            Toast.makeText(getApplicationContext(), "You have Logged out",
+                    Toast.LENGTH_LONG).show();
         }
 
         DrawerLayout drawerLayout = findViewById(R.id.settings);

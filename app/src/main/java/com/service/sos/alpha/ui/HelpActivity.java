@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.service.sos.alpha.MainActivity;
 import com.service.sos.alpha.R;
@@ -73,8 +74,8 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
             Intent help = new Intent(HelpActivity.this, HelpActivity.class);
             startActivity(help);
         } else if (id == R.id.nav_logout) {
-            Intent log = new Intent(HelpActivity.this, LoginActivity.class);
-            startActivity(log);
+            Toast.makeText(getApplicationContext(), "You have Logged out",
+                    Toast.LENGTH_LONG).show();
         }
 
         DrawerLayout drawerLayout = findViewById(R.id.help);

@@ -70,8 +70,8 @@ public class MapActivity extends AppCompatActivity implements NavigationView.OnN
             Intent help = new Intent(MapActivity.this, HelpActivity.class);
             startActivity(help);
         } else if (id == R.id.nav_logout) {
-            Intent log = new Intent(MapActivity.this, LoginActivity.class);
-            startActivity(log);
+            Toast.makeText(getApplicationContext(), "You have Logged out",
+                    Toast.LENGTH_LONG).show();
         }
 
         DrawerLayout drawerLayout = findViewById(R.id.map);
