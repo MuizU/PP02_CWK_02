@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.service.sos.alpha.MainActivity;
 import com.service.sos.alpha.R;
 
-public class RegistrationActivity extends MainActivity {
+public class RegistrationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

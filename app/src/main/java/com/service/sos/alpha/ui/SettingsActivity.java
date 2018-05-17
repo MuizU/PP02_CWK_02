@@ -14,7 +14,6 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.service.sos.alpha.MainActivity;
-import com.service.sos.alpha.ui.SettingsActivity;
 import com.service.sos.alpha.R;
 
 public class SettingsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {

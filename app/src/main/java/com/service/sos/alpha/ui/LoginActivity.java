@@ -17,7 +17,7 @@ import com.service.sos.alpha.MainActivity;
 import com.service.sos.alpha.R;
 
 
-public class LoginActivity extends MainActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class LoginActivity extends AppCompatActivity {
     private Toolbar toolbar;
 
 
@@ -35,6 +35,7 @@ public class LoginActivity extends MainActivity implements NavigationView.OnNavi
 
 
     }
+
 
 
 }

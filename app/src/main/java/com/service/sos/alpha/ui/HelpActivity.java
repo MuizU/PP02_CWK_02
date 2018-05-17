@@ -15,7 +15,7 @@ import android.view.MenuItem;
 import com.service.sos.alpha.MainActivity;
 import com.service.sos.alpha.R;
 
-public class HelpActivity extends MainActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HelpActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
