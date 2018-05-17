@@ -84,8 +84,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent help = new Intent(MainActivity.this, HelpActivity.class);
             startActivity(help);
         } else if (id == R.id.nav_logout) {
-            Toast.makeText(getApplicationContext(), "You have Logged out",
-                    Toast.LENGTH_LONG).show();
+            Intent log = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(log);
         }
 
         DrawerLayout drawerLayout = findViewById(R.id.chat);

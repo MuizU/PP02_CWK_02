@@ -36,6 +36,10 @@
         <activity android:name=".ui.MapActivity" />
         <activity android:name=".ui.SettingsActivity" />
         <activity android:name=".ui.HelpActivity" />
+        <activity android:name=".ui.FAQActivity" />
+        <activity android:name=".ui.Contact_Us" />
+        <activity android:name=".Terms_Conditions" />
+        <activity android:name=".AppInformation"></activity>
     </application>
 
 </manifest>
