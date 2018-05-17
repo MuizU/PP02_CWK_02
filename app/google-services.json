@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "144955130765",
+    "firebase_url": "https://assault-prevention-app-27dc6.firebaseio.com",
+    "project_id": "assault-prevention-app-27dc6",
+    "storage_bucket": "assault-prevention-app-27dc6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144955130765:android:8ffca5cea06f4c37",
+        "android_client_info": {
+          "package_name": "com.service.sos.alpha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144955130765-076aaj3eettajs4sdqk1e7j3vglbat4c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.service.sos.alpha",
+            "certificate_hash": "532b125b2ad5ecf52005e6c9b6370e08cd9d9c5d"
+          }
+        },
+        {
+          "client_id": "144955130765-ioi0p22e790n5itf376hb49t00mntl83.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmw-bWEa5SqjNuVxmtbJ3U6iiap9y6fd0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144955130765-ioi0p22e790n5itf376hb49t00mntl83.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144955130765:android:084fdb3444521c0c",
+        "android_client_info": {
+          "package_name": "com.services.sos.alpha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144955130765-ioi0p22e790n5itf376hb49t00mntl83.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmw-bWEa5SqjNuVxmtbJ3U6iiap9y6fd0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
