@@ -4,21 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".ui.Contact_Us">
 
     <ImageView
         android:id="@+id/logo1"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="85dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="59dp"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="10dp"
+        android:contentDescription="TODO"
         android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/logo2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/logo2"
@@ -26,6 +29,7 @@
         android:layout_height="0dp"
         android:layout_marginBottom="60dp"
         android:layout_marginEnd="24dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/logo3"
         app:layout_constraintStart_toEndOf="@+id/logo1"
@@ -37,6 +41,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="38dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="@+id/logo2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/logo2"
