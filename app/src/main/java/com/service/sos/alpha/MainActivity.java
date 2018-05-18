@@ -66,25 +66,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.nav_bar);
         navigationView.setNavigationItemSelectedListener(this);
         int id = item.getItemId();
-        android.support.v4.app.Fragment fragment = null;
         if (id == R.id.nav_chat) {
             Toast.makeText(getApplicationContext(), "This is chat!",
                     Toast.LENGTH_LONG).show();
 
         } else if (id == R.id.nav_map) {
             Intent map = new Intent(MainActivity.this, MapActivity.class);
+            map.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(map);
         } else if (id == R.id.nav_account) {
             Toast.makeText(getApplicationContext(), "This is My Account",
                     Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_settings) {
             Intent settings = new Intent(MainActivity.this, SettingsActivity.class);
+            settings.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(settings);
         } else if (id == R.id.nav_help) {
             Intent help = new Intent(MainActivity.this, HelpActivity.class);
+            help.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(help);
         } else if (id == R.id.nav_logout) {
             Intent log = new Intent(MainActivity.this, LoginActivity.class);
+            log.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(log);
         }
 

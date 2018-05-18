@@ -93,25 +93,29 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.nav_barHelpAndSupport);
         navigationView.setNavigationItemSelectedListener(this);
         int id = item.getItemId();
-        android.support.v4.app.Fragment fragment = null;
         if (id == R.id.nav_chat) {
             Intent map = new Intent(HelpActivity.this, MapActivity.class);
+            map.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(map);
-
         } else if (id == R.id.nav_map) {
             Intent map = new Intent(HelpActivity.this, MapActivity.class);
+            map.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(map);
         } else if (id == R.id.nav_account) {
             Intent account = new Intent(HelpActivity.this, RegistrationActivity.class);
+            account.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(account);
         } else if (id == R.id.nav_settings) {
             Intent settings = new Intent(HelpActivity.this, SettingsActivity.class);
+            settings.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(settings);
         } else if (id == R.id.nav_help) {
             Intent help = new Intent(HelpActivity.this, HelpActivity.class);
+            help.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(help);
         } else if (id == R.id.nav_logout) {
             Intent log = new Intent(HelpActivity.this, LoginActivity.class);
+            log.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(log);
         }
 

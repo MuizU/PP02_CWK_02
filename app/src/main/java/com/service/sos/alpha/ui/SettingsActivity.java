@@ -58,22 +58,27 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
         int id = item.getItemId();
         if (id == R.id.nav_chat) {
             Intent chat = new Intent(SettingsActivity.this, MainActivity.class);
+            chat.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(chat);
 
         } else if (id == R.id.nav_map) {
             Intent map = new Intent(SettingsActivity.this, MapActivity.class);
+            map.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(map);
         } else if (id == R.id.nav_account) {
             Toast.makeText(getApplicationContext(), "This is My Account",
                     Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_settings) {
             Intent settings = new Intent(SettingsActivity.this, SettingsActivity.class);
+            settings.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(settings);
         } else if (id == R.id.nav_help) {
             Intent help = new Intent(SettingsActivity.this, HelpActivity.class);
+            help.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(help);
         } else if (id == R.id.nav_logout) {
             Intent log = new Intent(SettingsActivity.this, LoginActivity.class);
+            log.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(log);
         }
 
