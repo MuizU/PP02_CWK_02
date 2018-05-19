@@ -52,6 +52,11 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
     }
 
     @Override
+    public void onBackPressed() {
+        startActivity(new Intent(SettingsActivity.this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION));
+        finish();
+    }
+    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         NavigationView navigationView = findViewById(R.id.nav_barSettings);
         navigationView.setNavigationItemSelectedListener(this);

@@ -76,7 +76,11 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(HelpActivity.this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION));
+        finish();
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 

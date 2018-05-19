@@ -37,7 +37,11 @@ public class MapActivity extends AppCompatActivity implements NavigationView.OnN
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(MapActivity.this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION));
+        finish();
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
