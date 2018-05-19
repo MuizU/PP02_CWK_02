@@ -1,4 +1,4 @@
-package com.service.sos.alpha.ui;
+package com.service.sos.alpha.ui.Help_and_support;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -13,13 +13,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.service.sos.alpha.ui.Help_and_support.AppInformation;
 import com.service.sos.alpha.MainActivity;
 import com.service.sos.alpha.R;
-import com.service.sos.alpha.ui.Help_and_support.Terms_Conditions;
 import com.service.sos.alpha.chat.ui.LoginActivity;
-import com.service.sos.alpha.ui.Help_and_support.Contact_Us;
-import com.service.sos.alpha.ui.Help_and_support.FAQActivity;
+import com.service.sos.alpha.ui.MapActivity;
+import com.service.sos.alpha.ui.RegistrationActivity;
+import com.service.sos.alpha.ui.SettingsActivity;
 
 public class HelpActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar toolbar;

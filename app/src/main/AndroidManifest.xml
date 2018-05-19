@@ -63,7 +63,7 @@
         <activity android:name=".ui.RegistrationActivity" />
         <activity android:name=".ui.MapActivity" />
         <activity android:name=".ui.SettingsActivity" />
-        <activity android:name=".ui.HelpActivity" />
+        <activity android:name=".ui.Help_and_support.HelpActivity" />
         <activity android:name=".ui.Help_and_support.FAQActivity" />
         <activity android:name=".ui.Help_and_support.Contact_Us" />
         <activity android:name=".ui.Help_and_support.Terms_Conditions" />

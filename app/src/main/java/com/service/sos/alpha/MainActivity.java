@@ -17,7 +17,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -32,7 +31,7 @@ import com.service.sos.alpha.chat.ui.FriendsFragment;
 import com.service.sos.alpha.chat.ui.GroupFragment;
 import com.service.sos.alpha.chat.ui.LoginActivity;
 import com.service.sos.alpha.chat.ui.UserProfileFragment;
-import com.service.sos.alpha.ui.HelpActivity;
+import com.service.sos.alpha.ui.Help_and_support.HelpActivity;
 import com.service.sos.alpha.ui.MapActivity;
 import com.service.sos.alpha.ui.SettingsActivity;
 

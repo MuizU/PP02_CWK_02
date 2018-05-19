@@ -3,7 +3,6 @@ package com.service.sos.alpha.ui;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -18,6 +17,7 @@ import android.widget.Toast;
 import com.service.sos.alpha.MainActivity;
 import com.service.sos.alpha.R;
 import com.service.sos.alpha.chat.ui.LoginActivity;
+import com.service.sos.alpha.ui.Help_and_support.HelpActivity;
 
 public class SettingsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar toolbar;
