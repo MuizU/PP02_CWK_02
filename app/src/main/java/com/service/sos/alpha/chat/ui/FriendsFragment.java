@@ -68,7 +68,7 @@ public class FriendsFragment extends Fragment implements SwipeRefreshLayout.OnRe
     private CountDownTimer detectFriendOnline;
     public static int ACTION_START_CHAT = 1;
 
-    public static final String ACTION_DELETE_FRIEND = "com.android.apachat.DELETE_FRIEND";
+    public static final String ACTION_DELETE_FRIEND = "com.service.sos.alpha.DELETE_FRIEND";
 
     private BroadcastReceiver deleteFriendReceiver;
 
