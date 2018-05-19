@@ -18,6 +18,57 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/inviteFriendsText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="81dp"
+            android:gravity="center"
+            android:text="Invite Friends"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/privacyText" />
+
+        <TextView
+            android:id="@+id/privacyText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="62dp"
+            android:gravity="center"
+            android:text="Privacy"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/inviteFriendsText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notificationsText" />
+
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="153dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="79dp"
+            android:layout_marginTop="76dp"
+            app:layout_constraintBottom_toTopOf="@+id/notificationsText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/notificationsText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="55dp"
+            android:gravity="center"
+            android:text="Notifications"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/privacyText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewLogo" />
+
     </android.support.constraint.ConstraintLayout>
     <android.support.design.widget.NavigationView
         android:layout_width="wrap_content"

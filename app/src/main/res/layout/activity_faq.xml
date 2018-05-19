@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.FAQActivity"
+    tools:context=".ui.Help_and_support.FAQActivity"
     android:id="@+id/faqActivity">
     <LinearLayout
         android:layout_width="match_parent"

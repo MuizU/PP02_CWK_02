@@ -1,5 +1,6 @@
 package com.service.sos.alpha;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -23,6 +24,8 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.service.sos.alpha.chat.data.FriendDB;
+import com.service.sos.alpha.chat.data.GroupDB;
 import com.service.sos.alpha.chat.data.StaticConfig;
 import com.service.sos.alpha.chat.service.ServiceUtils;
 import com.service.sos.alpha.chat.ui.FriendsFragment;
@@ -126,6 +129,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -302,12 +306,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onBackPressed() {
         startActivity(new Intent(MainActivity.this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION));
         finish();
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+
+        startActivity(intent);
     }
 
+    Context context = this;
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        NavigationView navigationView = findViewById(R.id.nav_chat);
-        navigationView.setNavigationItemSelectedListener(this);
         int id = item.getItemId();
         if (id == R.id.nav_chat) {
             Intent chat = new Intent(MainActivity.this, MainActivity.class);
@@ -330,9 +338,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             help.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(help);
         } else if (id == R.id.nav_logout) {
-            Intent log = new Intent(MainActivity.this, LoginActivity.class);
-            log.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            startActivity(log);
+            FirebaseAuth.getInstance().signOut();
+            FriendDB.getInstance(context).dropDB();
+            GroupDB.getInstance(context).dropDB();
+            ServiceUtils.stopServiceFriendChat(context.getApplicationContext(), true);
+            finish();
         }
 
         DrawerLayout drawerLayout = findViewById(R.id.chat);

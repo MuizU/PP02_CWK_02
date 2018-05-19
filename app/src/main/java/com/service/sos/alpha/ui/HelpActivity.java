@@ -9,16 +9,17 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.service.sos.alpha.AppInformation;
+import com.service.sos.alpha.ui.Help_and_support.AppInformation;
 import com.service.sos.alpha.MainActivity;
 import com.service.sos.alpha.R;
-import com.service.sos.alpha.Terms_Conditions;
+import com.service.sos.alpha.ui.Help_and_support.Terms_Conditions;
 import com.service.sos.alpha.chat.ui.LoginActivity;
+import com.service.sos.alpha.ui.Help_and_support.Contact_Us;
+import com.service.sos.alpha.ui.Help_and_support.FAQActivity;
 
 public class HelpActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar toolbar;
