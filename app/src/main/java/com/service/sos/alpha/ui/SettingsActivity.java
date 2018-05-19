@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.service.sos.alpha.MainActivity;
 import com.service.sos.alpha.R;
+import com.service.sos.alpha.chat.ui.LoginActivity;
 
 public class SettingsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar toolbar;

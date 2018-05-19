@@ -15,7 +15,6 @@
     </string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="register">click_here_to_register</string>
     <string name="email">Email</string>
     <string name="map">View Friends </string>
     <string name="help_and_support">Help and Support</string>
@@ -31,6 +30,22 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="chat">Chat</string>
+
+    <!--Strings required for Chat feature-->
+    <string name="about">About</string>
+    <string name="login_success">login success</string>
+    <string name="login">LOGIN</string>
+    <string name="Username">Email</string>
+    <string name="Password">Password</string>
+    <string name="forgot_your_password">Forgot your password ?</string>
+    <string name="go">SIGN IN</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="next">NEXT</string>
+    <string name="register">REGISTER</string>
+    <string name="hint_username">Enter a new username</string>
+    <string name="hint_email_reset">Enter your email</string>
+    <string name="enter_group_name">Enter group name</string>
+    <!--End of strings required for chat feature-->
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

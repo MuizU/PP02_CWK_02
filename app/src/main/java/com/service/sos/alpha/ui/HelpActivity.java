@@ -18,6 +18,7 @@ import com.service.sos.alpha.AppInformation;
 import com.service.sos.alpha.MainActivity;
 import com.service.sos.alpha.R;
 import com.service.sos.alpha.Terms_Conditions;
+import com.service.sos.alpha.chat.ui.LoginActivity;
 
 public class HelpActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar toolbar;
