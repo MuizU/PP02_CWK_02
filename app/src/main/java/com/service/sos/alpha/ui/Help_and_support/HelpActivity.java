@@ -27,7 +27,7 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
     private TextView fAQButton;//1
     private TextView contactUs;
     private TextView terms_privacy;
-    private TextView appInfor;
+    private TextView appInformation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +67,8 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
             }
         });
-        appInfor = findViewById(R.id.appInfor);
-        appInfor.setOnClickListener(new View.OnClickListener() {
+        appInformation = findViewById(R.id.appInfor);
+        appInformation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent( HelpActivity.this, AppInformation.class);
