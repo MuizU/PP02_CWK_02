@@ -35,7 +35,7 @@
             android:layout_marginBottom="31dp"
             android:text="Contact Us"
             app:layout_constraintBottom_toTopOf="@+id/terms_privacy"
-            app:layout_constraintEnd_toEndOf="@+id/appInfor"
+            app:layout_constraintEnd_toEndOf="@+id/appInfo"
             app:layout_constraintStart_toStartOf="@+id/terms_privacy"
             app:layout_constraintTop_toBottomOf="@+id/faqText" />
 
@@ -46,12 +46,12 @@
             android:layout_marginBottom="36dp"
             android:layout_marginStart="40dp"
             android:text="Terms and Privacy Policy"
-            app:layout_constraintBottom_toTopOf="@+id/appInfor"
+            app:layout_constraintBottom_toTopOf="@+id/appInfo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/contact_us" />
 
         <TextView
-            android:id="@+id/appInfor"
+            android:id="@+id/appInfo"
             android:layout_width="105dp"
             android:layout_height="0dp"
             android:layout_marginBottom="85dp"

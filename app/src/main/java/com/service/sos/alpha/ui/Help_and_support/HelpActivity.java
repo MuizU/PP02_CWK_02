@@ -1,6 +1,7 @@
 package com.service.sos.alpha.ui.Help_and_support;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -49,31 +50,35 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
         fAQButton.setOnClickListener(new View.OnClickListener() {//3
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HelpActivity.this,FAQActivity.class);//4
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);//5
+                Intent termsAndPrivacy = new Intent("android.intent.action.VIEW",
+                        Uri.parse("https://policies.google.com/faq"));
+                startActivity(termsAndPrivacy);
             }
         });
         contactUs = findViewById(R.id.contact_us);
         contactUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent ( HelpActivity.this,Contact_Us.class ) ;
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
+                Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+                intent.setType("message/rfc822");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"custserv.teamsos@gmail.com"});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback/Questions about RescueMe");
+                intent.putExtra(Intent.EXTRA_TEXT, "");
+                startActivity(Intent.createChooser(intent, "Contact support via..."));
+
             }
         });
         terms_privacy = findViewById(R.id.terms_privacy);
         terms_privacy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent (HelpActivity.this,Terms_Conditions.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
+                Intent termsAndPrivacy = new Intent("android.intent.action.VIEW",
+                        Uri.parse("https://policies.google.com/"));
+                startActivity(termsAndPrivacy);
             }
         });
 
-        appInformation = findViewById(R.id.appInfor);
+        appInformation = findViewById(R.id.appInfo);
         appInformation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
