@@ -47,7 +47,8 @@
         <activity
             android:name=".chat.ui.ChatActivity"
             android:screenOrientation="portrait"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
         <activity android:name=".chat.ui.AddGroupActivity"
             android:theme="@style/MyThemeNoActionbar"/>
         <service android:name=".chat.service.FriendChatService"
