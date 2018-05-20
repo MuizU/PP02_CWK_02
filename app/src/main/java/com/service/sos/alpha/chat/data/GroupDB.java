@@ -60,7 +60,9 @@ public class GroupDB {
 
     public Group getGroup(String id){
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from " + GroupDB.FeedEntry.TABLE_NAME + " where " + FeedEntry.COLUMN_GROUP_ID +" = " + id, null);
+        Cursor cursor = db.rawQuery("select * from " +
+                GroupDB.FeedEntry.TABLE_NAME + " where " +
+                FeedEntry.COLUMN_GROUP_ID +" = " + id, null);
         Group newGroup = new Group();
         while (cursor.moveToNext()) {
             String idGroup = cursor.getString(0);

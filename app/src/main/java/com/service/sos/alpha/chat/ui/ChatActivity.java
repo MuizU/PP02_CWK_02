@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -31,6 +32,7 @@ import com.service.sos.alpha.chat.model.Message;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -41,7 +43,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     private ListMessageAdapter adapter;
     private String roomId;
     private ArrayList<CharSequence> idFriend;
-    private com.service.sos.alpha.chat.model.Conversation Conversation;
+    private Conversation Conversation;
     private ImageButton btnSend;
     private EditText editWriteMessage;
     private LinearLayoutManager linearLayoutManager;
@@ -239,8 +241,8 @@ class ItemMessageUserHolder extends RecyclerView.ViewHolder {
 
     public ItemMessageUserHolder(View itemView) {
         super(itemView);
-        txtContent = itemView.findViewById(R.id.textContentUser);
-        avata = itemView.findViewById(R.id.imageView2);
+        txtContent = (TextView) itemView.findViewById(R.id.textContentUser);
+        avata = (CircleImageView) itemView.findViewById(R.id.imageView2);
     }
 }
 
@@ -250,7 +252,8 @@ class ItemMessageFriendHolder extends RecyclerView.ViewHolder {
 
     public ItemMessageFriendHolder(View itemView) {
         super(itemView);
-        txtContent = itemView.findViewById(R.id.textContentFriend);
-        avata = itemView.findViewById(R.id.imageView3);
+        txtContent = (TextView) itemView.findViewById(R.id.textContentFriend);
+        avata = (CircleImageView) itemView.findViewById(R.id.imageView3);
     }
 }
+
