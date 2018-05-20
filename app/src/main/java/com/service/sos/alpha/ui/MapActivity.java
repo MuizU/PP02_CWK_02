@@ -12,8 +12,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.service.sos.alpha.MainActivity;
 import com.service.sos.alpha.R;
+import com.service.sos.alpha.chat.data.FriendDB;
+import com.service.sos.alpha.chat.data.GroupDB;
+import com.service.sos.alpha.chat.service.ServiceUtils;
 import com.service.sos.alpha.chat.ui.LoginActivity;
 import com.service.sos.alpha.ui.Help_and_support.HelpActivity;
 
@@ -68,9 +72,6 @@ public class MapActivity extends AppCompatActivity implements NavigationView.OnN
             Intent map = new Intent(MapActivity.this, MapActivity.class);
             map.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(map);
-        } else if (id == R.id.nav_account) {
-            Toast.makeText(getApplicationContext(), "This is My Account",
-                    Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_settings) {
             Intent settings = new Intent(MapActivity.this, SettingsActivity.class);
             settings.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
@@ -80,9 +81,12 @@ public class MapActivity extends AppCompatActivity implements NavigationView.OnN
             help.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(help);
         } else if (id == R.id.nav_logout) {
-            Intent log = new Intent(MapActivity.this, LoginActivity.class);
-            log.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            startActivity(log);
+            FirebaseAuth.getInstance().signOut();
+            FriendDB.getInstance(this).dropDB();
+            GroupDB.getInstance(this).dropDB();
+            ServiceUtils.stopServiceFriendChat(this.getApplicationContext(), true);
+            overridePendingTransition(0, 0);
+            finish();
         }
 
         DrawerLayout drawerLayout = findViewById(R.id.map);

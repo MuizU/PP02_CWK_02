@@ -16,28 +16,40 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="@+id/notificationsText"
+        app:layout_constraintEnd_toStartOf="@+id/inviteFriendsText"
+        app:layout_constraintStart_toStartOf="@+id/inviteFriendsText"
+        app:layout_constraintTop_toBottomOf="@+id/notificationsText">
 
         <TextView
             android:id="@+id/inviteFriendsText"
+            style="@android:style/Widget.Button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="81dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="220dp"
+            android:clickable="false"
             android:gravity="center"
+            android:textColor="@color/colorIndivateTab"
+            android:backgroundTint="@color/colorPrimary"
             android:text="Invite Friends"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/privacyText" />
+            app:layout_constraintTop_toBottomOf="@+id/notificationsText" />
 
         <TextView
             android:id="@+id/privacyText"
+            style="@android:style/Widget.Button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="62dp"
+            android:layout_height="64dp"
+            android:clickable="false"
             android:gravity="center"
             android:text="Privacy"
+            android:textColor="@color/colorIndivateTab"
+            android:backgroundTint="@color/colorPrimary"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/inviteFriendsText"
             app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +60,7 @@
             android:id="@+id/imageViewLogo"
             android:layout_width="153dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="79dp"
+            android:layout_marginBottom="13dp"
             android:layout_marginTop="76dp"
             app:layout_constraintBottom_toTopOf="@+id/notificationsText"
             app:layout_constraintEnd_toEndOf="parent"
@@ -58,13 +70,17 @@
 
         <TextView
             android:id="@+id/notificationsText"
+            style="@android:style/Widget.Button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="55dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="59dp"
+            android:clickable="false"
             android:gravity="center"
+            android:textColor="@color/colorIndivateTab"
+            android:backgroundTint="@color/colorPrimary"
             android:text="Notifications"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/privacyText"
+            app:layout_constraintBottom_toTopOf="@+id/inviteFriendsText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewLogo" />

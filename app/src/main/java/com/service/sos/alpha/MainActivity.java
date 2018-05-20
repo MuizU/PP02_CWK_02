@@ -318,16 +318,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         if (id == R.id.nav_chat) {
             Intent chat = new Intent(MainActivity.this, MainActivity.class);
+            overridePendingTransition(0, 0);
             chat.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(chat);
 
         } else if (id == R.id.nav_map) {
             Intent map = new Intent(MainActivity.this, MapActivity.class);
+            overridePendingTransition(0, 0);
             map.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(map);
-        } else if (id == R.id.nav_account) {
-            Toast.makeText(getApplicationContext(), "This is My Account",
-                    Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_settings) {
             Intent settings = new Intent(MainActivity.this, SettingsActivity.class);
             settings.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
@@ -341,6 +340,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             FriendDB.getInstance(context).dropDB();
             GroupDB.getInstance(context).dropDB();
             ServiceUtils.stopServiceFriendChat(context.getApplicationContext(), true);
+            overridePendingTransition(0, 0);
             finish();
         }
 

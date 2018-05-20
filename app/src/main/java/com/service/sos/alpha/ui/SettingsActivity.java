@@ -1,6 +1,7 @@
 package com.service.sos.alpha.ui;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,8 +15,12 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.service.sos.alpha.MainActivity;
 import com.service.sos.alpha.R;
+import com.service.sos.alpha.chat.data.FriendDB;
+import com.service.sos.alpha.chat.data.GroupDB;
+import com.service.sos.alpha.chat.service.ServiceUtils;
 import com.service.sos.alpha.chat.ui.LoginActivity;
 import com.service.sos.alpha.ui.Help_and_support.HelpActivity;
 
@@ -44,6 +49,7 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
         inviteFriends.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent shareIntent = new Intent(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Assault Prevention Device");
@@ -86,9 +92,6 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
             Intent map = new Intent(SettingsActivity.this, MapActivity.class);
             map.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(map);
-        } else if (id == R.id.nav_account) {
-            Toast.makeText(getApplicationContext(), "This is My Account",
-                    Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_settings) {
             Intent settings = new Intent(SettingsActivity.this, SettingsActivity.class);
             settings.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
@@ -98,9 +101,12 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
             help.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(help);
         } else if (id == R.id.nav_logout) {
-            Intent log = new Intent(SettingsActivity.this, LoginActivity.class);
-            log.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            startActivity(log);
+            FirebaseAuth.getInstance().signOut();
+            FriendDB.getInstance(this).dropDB();
+            GroupDB.getInstance(this).dropDB();
+            ServiceUtils.stopServiceFriendChat(this.getApplicationContext(), true);
+            overridePendingTransition(0, 0);
+            finish();
         }
 
         DrawerLayout drawerLayout = findViewById(R.id.settings);

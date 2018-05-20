@@ -28,6 +28,10 @@ public class Terms_Conditions extends AppCompatActivity {
         });
     }
 
+    public void onPause() {
+        super.onPause();
+        overridePendingTransition(0, 0);
+    }
     @Override
     public void onBackPressed() {
         super.onBackPressed();

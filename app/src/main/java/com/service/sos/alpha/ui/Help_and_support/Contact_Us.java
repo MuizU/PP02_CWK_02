@@ -31,4 +31,9 @@ public class Contact_Us extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
     }
+
+    public void onPause() {
+        super.onPause();
+        overridePendingTransition(0, 0);
+    }
 }

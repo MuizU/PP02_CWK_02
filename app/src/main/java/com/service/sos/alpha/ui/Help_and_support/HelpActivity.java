@@ -13,11 +13,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.service.sos.alpha.MainActivity;
 import com.service.sos.alpha.R;
-import com.service.sos.alpha.chat.ui.LoginActivity;
+import com.service.sos.alpha.chat.data.FriendDB;
+import com.service.sos.alpha.chat.data.GroupDB;
+import com.service.sos.alpha.chat.service.ServiceUtils;
 import com.service.sos.alpha.ui.MapActivity;
-import com.service.sos.alpha.ui.RegistrationActivity;
 import com.service.sos.alpha.ui.SettingsActivity;
 
 public class HelpActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -107,14 +109,6 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
             Intent map = new Intent(HelpActivity.this, MapActivity.class);
             map.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(map);
-        } else if (id == R.id.nav_map) {
-            Intent map = new Intent(HelpActivity.this, MapActivity.class);
-            map.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            startActivity(map);
-        } else if (id == R.id.nav_account) {
-            Intent account = new Intent(HelpActivity.this, RegistrationActivity.class);
-            account.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            startActivity(account);
         } else if (id == R.id.nav_settings) {
             Intent settings = new Intent(HelpActivity.this, SettingsActivity.class);
             settings.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
@@ -124,9 +118,12 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
             help.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(help);
         } else if (id == R.id.nav_logout) {
-            Intent log = new Intent(HelpActivity.this, LoginActivity.class);
-            log.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            startActivity(log);
+            FirebaseAuth.getInstance().signOut();
+            FriendDB.getInstance(this).dropDB();
+            GroupDB.getInstance(this).dropDB();
+            ServiceUtils.stopServiceFriendChat(this.getApplicationContext(), true);
+            finish();
+            overridePendingTransition(0, 0);
         }
 
         DrawerLayout drawerLayout = findViewById(R.id.helpAndSupport);
