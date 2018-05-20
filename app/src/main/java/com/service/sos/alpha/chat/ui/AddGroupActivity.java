@@ -62,7 +62,8 @@ public class AddGroupActivity extends AppCompatActivity {
 
         Intent intentData = getIntent();
         txtActionName = findViewById(R.id.txtActionName);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,
+                LinearLayoutManager.VERTICAL, false);
         listFriend = FriendDB.getInstance(this).getListFriend();
         listIDChoose = new HashSet<>();
         listIDRemove = new HashSet<>();

@@ -51,6 +51,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -68,7 +69,7 @@ public class FriendsFragment extends Fragment implements SwipeRefreshLayout.OnRe
     private CountDownTimer detectFriendOnline;
     public static int ACTION_START_CHAT = 1;
 
-    public static final String ACTION_DELETE_FRIEND = "com.service.sos.alpha.DELETE_FRIEND";
+    public static final String ACTION_DELETE_FRIEND = "com.service.sos.alpha.chat.DELETE_FRIEND";
 
     private BroadcastReceiver deleteFriendReceiver;
 
@@ -216,7 +217,7 @@ public class FriendsFragment extends Fragment implements SwipeRefreshLayout.OnRe
         /**
          * Find the id of the email on the server
          *
-         * @param email
+         * @param email Find the email id
          */
         private void findIDEmail(String email) {
             dialogWait.setCancelable(false)
@@ -734,3 +735,4 @@ class ItemFriendViewHolder extends RecyclerView.ViewHolder{
         this.context = context;
     }
 }
+
