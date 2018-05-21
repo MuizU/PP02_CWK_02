@@ -1,1 +1,1 @@
-include ':app', ':friendsapp', ':friendapp'
+include ':app'
