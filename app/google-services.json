@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "144955130765-5fmna1i26a9bn5r8g4f9er7c8q78pfs4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.service.sos.alpha",
+            "certificate_hash": "12d9a791021ada4e6dd3702eab736d5defd26791"
+          }
+        },
+        {
+          "client_id": "144955130765-f6obcbob3h1uekvj9idmhiuecb0svrhg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.service.sos.alpha",
+            "certificate_hash": "fe45a87f4e2b0570927715a812ae51748e2c043a"
+          }
+        },
+        {
           "client_id": "144955130765-076aaj3eettajs4sdqk1e7j3vglbat4c.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -29,7 +45,7 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDmw-bWEa5SqjNuVxmtbJ3U6iiap9y6fd0"
+          "current_key": "AIzaSyBL8sLdyuQQYJBYBZ98qblbPIBUWGXflDI"
         }
       ],
       "services": {
@@ -65,7 +81,7 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDmw-bWEa5SqjNuVxmtbJ3U6iiap9y6fd0"
+          "current_key": "AIzaSyBL8sLdyuQQYJBYBZ98qblbPIBUWGXflDI"
         }
       ],
       "services": {
