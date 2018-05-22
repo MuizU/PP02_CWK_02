@@ -111,7 +111,7 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         int id = item.getItemId();
         if (id == R.id.nav_chat) {
-            Intent map = new Intent(HelpActivity.this, MapsActivity.class);
+            Intent map = new Intent(HelpActivity.this, MainActivity.class);
             map.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(map);
         } else if (id == R.id.nav_settings) {
