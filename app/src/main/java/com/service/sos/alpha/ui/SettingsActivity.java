@@ -1,7 +1,6 @@
 package com.service.sos.alpha.ui;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,7 +12,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.service.sos.alpha.MainActivity;
@@ -21,7 +19,6 @@ import com.service.sos.alpha.R;
 import com.service.sos.alpha.chat.data.FriendDB;
 import com.service.sos.alpha.chat.data.GroupDB;
 import com.service.sos.alpha.chat.service.ServiceUtils;
-import com.service.sos.alpha.chat.ui.LoginActivity;
 import com.service.sos.alpha.ui.Help_and_support.HelpActivity;
 
 public class SettingsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -89,7 +86,7 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
             startActivity(chat);
 
         } else if (id == R.id.nav_map) {
-            Intent map = new Intent(SettingsActivity.this, MapActivity.class);
+            Intent map = new Intent(SettingsActivity.this, MapsActivity.class);
             map.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(map);
         } else if (id == R.id.nav_settings) {

@@ -20,7 +20,7 @@ import com.service.sos.alpha.R;
 import com.service.sos.alpha.chat.data.FriendDB;
 import com.service.sos.alpha.chat.data.GroupDB;
 import com.service.sos.alpha.chat.service.ServiceUtils;
-import com.service.sos.alpha.ui.MapActivity;
+import com.service.sos.alpha.ui.MapsActivity;
 import com.service.sos.alpha.ui.SettingsActivity;
 
 public class HelpActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -111,7 +111,7 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         int id = item.getItemId();
         if (id == R.id.nav_chat) {
-            Intent map = new Intent(HelpActivity.this, MapActivity.class);
+            Intent map = new Intent(HelpActivity.this, MapsActivity.class);
             map.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(map);
         } else if (id == R.id.nav_settings) {

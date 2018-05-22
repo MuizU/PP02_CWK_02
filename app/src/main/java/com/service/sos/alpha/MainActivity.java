@@ -33,7 +33,7 @@ import com.service.sos.alpha.chat.ui.GroupFragment;
 import com.service.sos.alpha.chat.ui.LoginActivity;
 import com.service.sos.alpha.chat.ui.UserProfileFragment;
 import com.service.sos.alpha.ui.Help_and_support.HelpActivity;
-import com.service.sos.alpha.ui.MapActivity;
+import com.service.sos.alpha.ui.MapsActivity;
 import com.service.sos.alpha.ui.SettingsActivity;
 
 import java.util.ArrayList;
@@ -88,7 +88,7 @@ import java.util.Objects;
 //                    Toast.LENGTH_LONG).show();
 //
 //        } else if (id == R.id.nav_map) {
-//            Intent map = new Intent(MainActivity.this, MapActivity.class);
+//            Intent map = new Intent(MainActivity.this, MapsActivity.class);
 //            startActivity(map);
 //        } else if (id == R.id.nav_account) {
 //            Toast.makeText(getApplicationContext(), "This is My Account",
@@ -316,7 +316,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(chat);
 
         } else if (id == R.id.nav_map) {
-            Intent map = new Intent(MainActivity.this, MapActivity.class);
+            Intent map = new Intent(MainActivity.this, MapsActivity.class);
             overridePendingTransition(0, 0);
             map.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(map);
