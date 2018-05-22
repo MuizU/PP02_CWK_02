@@ -93,18 +93,22 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         int id = item.getItemId();
         if (id == R.id.nav_chat) {
             Intent home = new Intent(MapsActivity.this, MainActivity.class);
+            overridePendingTransition(0, 0);
             home.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(home);
         } else if (id == R.id.nav_map) {
             Intent map = new Intent(MapsActivity.this, MapsActivity.class);
+            overridePendingTransition(0, 0);
             map.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(map);
         } else if (id == R.id.nav_settings) {
             Intent settings = new Intent(MapsActivity.this, SettingsActivity.class);
+            overridePendingTransition(0, 0);
             settings.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(settings);
         } else if (id == R.id.nav_help) {
             Intent help = new Intent(MapsActivity.this, HelpActivity.class);
+            overridePendingTransition(0, 0);
             help.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(help);
         } else if (id == R.id.nav_logout) {
