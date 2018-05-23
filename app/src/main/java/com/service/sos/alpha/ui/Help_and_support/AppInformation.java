@@ -11,7 +11,6 @@ import com.service.sos.alpha.R;
 
 public class AppInformation extends AppCompatActivity {
     Toolbar toolbar;
-    public TextView appVersion = findViewById(R.id.appInfo);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
