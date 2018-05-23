@@ -92,10 +92,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         navigationView.setNavigationItemSelectedListener(this);
         int id = item.getItemId();
         if (id == R.id.nav_chat) {
-            Intent home = new Intent(MapsActivity.this, MainActivity.class);
+            Intent chat = new Intent(MapsActivity.this, MainActivity.class);
             overridePendingTransition(0, 0);
-            home.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            startActivity(home);
+            chat.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(chat);
         } else if (id == R.id.nav_map) {
             Intent map = new Intent(MapsActivity.this, MapsActivity.class);
             overridePendingTransition(0, 0);
@@ -120,7 +120,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             finish();
         }
 
-        DrawerLayout drawerLayout = findViewById(R.id.map);
+        DrawerLayout drawerLayout = findViewById(R.id.maps);
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
