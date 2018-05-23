@@ -4,11 +4,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.service.sos.alpha.R;
 
 public class AppInformation extends AppCompatActivity {
     Toolbar toolbar;
+    public TextView appVersion = findViewById(R.id.appInfo);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

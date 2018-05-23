@@ -1,27 +1,44 @@
 package com.service.sos.alpha.ui.Help_and_support;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
+import android.os.StatFs;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.telephony.TelephonyManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.service.sos.alpha.BuildConfig;
 import com.service.sos.alpha.MainActivity;
+
+import android.Manifest;
+import android.widget.Toast;
+
 import com.service.sos.alpha.R;
 import com.service.sos.alpha.chat.data.FriendDB;
 import com.service.sos.alpha.chat.data.GroupDB;
 import com.service.sos.alpha.chat.service.ServiceUtils;
 import com.service.sos.alpha.ui.MapsActivity;
 import com.service.sos.alpha.ui.SettingsActivity;
+
+import java.io.File;
+import java.util.ArrayList;
+
+import static android.provider.Telephony.ThreadsColumns.ERROR;
 
 public class HelpActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar toolbar;
@@ -32,6 +49,134 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
     private TextView terms_privacy;
     private TextView appInformation;
 
+    public static String getAvailableInternalMemorySize() {
+        File path = Environment.getDataDirectory();
+        StatFs stat = new StatFs(path.getPath());
+        long blockSize = stat.getBlockSizeLong();
+        long availableBlocks = stat.getAvailableBlocksLong();
+        return formatSize(availableBlocks * blockSize);
+    }
+
+    public static String getAvailableExternalMemorySize() {
+        if (android.os.Environment.getExternalStorageState().equals(
+                android.os.Environment.MEDIA_MOUNTED)) {
+            File path = Environment.getExternalStorageDirectory();
+            StatFs stat = new StatFs(path.getPath());
+            long blockSize = stat.getBlockSizeLong();
+            long availableBlocks = stat.getAvailableBlocksLong();
+            return formatSize(availableBlocks * blockSize);
+        } else {
+            return ERROR;
+        }
+    }
+
+    public static String formatSize(long size) {
+        String suffix = null;
+
+        if (size >= 1024) {
+            suffix = "KB";
+            size /= 1024;
+            if (size >= 1024) {
+                suffix = "MB";
+                size /= 1024;
+                if (size >= 1024) {
+                    suffix = "GB";
+                }
+            }
+        }
+
+        StringBuilder resultBuffer = new StringBuilder(Long.toString(size));
+
+        int commaOffset = resultBuffer.length() - 3;
+        while (commaOffset > 0) {
+            resultBuffer.insert(commaOffset, ',');
+            commaOffset -= 3;
+        }
+
+        if (suffix != null) resultBuffer.append(suffix);
+        return resultBuffer.toString();
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    private String deviceInfo() {
+        StringBuilder deviceName = new StringBuilder("--Support Info--\n");
+        ArrayList<String> userInfo = new ArrayList();
+        TelephonyManager telephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+        if (ContextCompat.checkSelfPermission(getBaseContext(), Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+            TelephonyInfo telephonyInfo = TelephonyInfo.getInstance(this);
+
+            String imeiSIM1 = telephonyInfo.getImsiSIM1();
+            String imeiSIM2 = telephonyInfo.getImsiSIM2();
+
+            boolean isSIM1Ready = telephonyInfo.isSIM1Ready();
+            boolean isSIM2Ready = telephonyInfo.isSIM2Ready();
+
+            boolean isDualSIM = telephonyInfo.isDualSIM();
+            // device Id
+            String deviceId = "Device ID: " + telephonyManager.getDeviceId();
+            // software version
+            String softwareVersion = "Software version: " + telephonyManager.getDeviceSoftwareVersion();
+            //mobile number
+            String phoneNumber = null;
+            String phoneNumberTwo = null;
+            if (isDualSIM) {
+                String name = "Debug info: ";
+                if (isSIM1Ready && isSIM2Ready) {
+                    phoneNumber = name + imeiSIM1;
+                    phoneNumberTwo = name + imeiSIM2;
+                } else if (isSIM1Ready) {
+                    phoneNumber = name + imeiSIM1;
+                } else if (isSIM2Ready) {
+                    phoneNumber = name + imeiSIM2;
+                }
+            } else {
+                phoneNumber = "Debug info" + telephonyManager.getLine1Number();
+            }
+            //Description
+            String Description = "Description: " + BuildConfig.VERSION_CODE;
+            //Version
+            String version = "Version: " + BuildConfig.VERSION_CODE;
+            //App Name
+            String appName = "App: com.RescueMe";
+            // serial number
+            String simSerialNo = "Sim Serial Number: " + telephonyManager.getSimSerialNumber();
+            // sim operator name
+            String sim_operator_Name = "Carrier Provider: " + telephonyManager.getSimOperatorName();
+            //Manufacturer
+            String deviceManufacturer = "Manufacturer: " + android.os.Build.MANUFACTURER;
+            //Model
+            String deviceModel = "Model: " + android.os.Build.MODEL;
+            //OS
+            String os = "OS: " + Build.VERSION.RELEASE;
+            //External Memory available
+            String availableExternalSpace = "Free Space Built in : " + getAvailableExternalMemorySize();
+            //Internal memory available
+            String availableInternalSpace = "Free Space Removable: " + getAvailableInternalMemorySize();
+            userInfo.add(appName);
+            userInfo.add(phoneNumber);
+            userInfo.add(phoneNumberTwo);
+            userInfo.add(Description);
+            userInfo.add(version);
+            userInfo.add(deviceManufacturer);
+            userInfo.add(deviceModel);
+            userInfo.add(os);
+            userInfo.add(availableInternalSpace);
+            userInfo.add(availableExternalSpace);
+            userInfo.add(deviceId);
+            userInfo.add(softwareVersion);
+            userInfo.add(sim_operator_Name);
+            userInfo.add(simSerialNo);
+
+            for (String x : userInfo) {
+                deviceName.append(x + "\n");
+            }
+        } else {
+            if (shouldShowRequestPermissionRationale(Manifest.permission.READ_PHONE_STATE)) {
+                Toast.makeText(this, "Device information is necessary to send feedback", Toast.LENGTH_SHORT).show();
+            }
+        }
+        return new String(deviceName);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +208,7 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
                 intent.setType("message/rfc822");
                 intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"custserv.teamsos@gmail.com"});
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback/Questions about RescueMe");
-                intent.putExtra(Intent.EXTRA_TEXT, "");
+                intent.putExtra(Intent.EXTRA_TEXT, "\n\n\n\n" + deviceInfo());
                 startActivity(Intent.createChooser(intent, "Contact support via..."));
 
             }
@@ -78,7 +223,7 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        appInformation = findViewById(R.id.appInfo);
+        appInformation = findViewById(R.id.appInformation);
         appInformation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
