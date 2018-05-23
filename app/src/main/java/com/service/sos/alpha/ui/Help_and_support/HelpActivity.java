@@ -204,8 +204,8 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
         contactUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(android.content.Intent.ACTION_SEND);
-                intent.setType("message/rfc822");
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:"));
                 intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"custserv.teamsos@gmail.com"});
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback/Questions about RescueMe");
                 intent.putExtra(Intent.EXTRA_TEXT, "\n\n\n\n" + deviceInfo());
