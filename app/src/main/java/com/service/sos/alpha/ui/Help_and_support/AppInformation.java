@@ -6,11 +6,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.service.sos.alpha.BuildConfig;
 import com.service.sos.alpha.R;
 
 public class AppInformation extends AppCompatActivity {
     Toolbar toolbar;
+    TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +21,8 @@ public class AppInformation extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("FAQ");
+        textView = findViewById(R.id.appInfo);
+        textView.setText(String.valueOf("Version: " + BuildConfig.VERSION_CODE));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         toolbar.setNavigationIcon(R.drawable.ic_action_back);
@@ -27,7 +32,10 @@ public class AppInformation extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+
     }
+
 
     @Override
     public void onBackPressed() {
