@@ -1,10 +1,9 @@
-package com.service.sos.alpha.ui;
+package com.service.sos.alpha.ui.map;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -19,12 +18,16 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.service.sos.alpha.MainActivity;
 import com.service.sos.alpha.R;
 import com.service.sos.alpha.chat.data.FriendDB;
 import com.service.sos.alpha.chat.data.GroupDB;
 import com.service.sos.alpha.chat.service.ServiceUtils;
 import com.service.sos.alpha.ui.Help_and_support.HelpActivity;
+import com.service.sos.alpha.ui.SettingsActivity;
 
 import java.util.Objects;
 
@@ -33,6 +36,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
     private GoogleMap mMap;
+    private DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("location");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

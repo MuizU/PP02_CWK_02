@@ -33,7 +33,7 @@ import com.service.sos.alpha.chat.ui.GroupFragment;
 import com.service.sos.alpha.chat.ui.LoginActivity;
 import com.service.sos.alpha.chat.ui.UserProfileFragment;
 import com.service.sos.alpha.ui.Help_and_support.HelpActivity;
-import com.service.sos.alpha.ui.MapsActivity;
+import com.service.sos.alpha.ui.map.MapsActivity;
 import com.service.sos.alpha.ui.SettingsActivity;
 
 import java.util.ArrayList;
