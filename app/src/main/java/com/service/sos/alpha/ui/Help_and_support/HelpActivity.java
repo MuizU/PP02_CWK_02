@@ -32,8 +32,8 @@ import com.service.sos.alpha.R;
 import com.service.sos.alpha.chat.data.FriendDB;
 import com.service.sos.alpha.chat.data.GroupDB;
 import com.service.sos.alpha.chat.service.ServiceUtils;
-import com.service.sos.alpha.ui.MapsActivity;
 import com.service.sos.alpha.ui.SettingsActivity;
+import com.service.sos.alpha.ui.map.MapsActivity;
 
 import java.io.File;
 import java.util.ArrayList;

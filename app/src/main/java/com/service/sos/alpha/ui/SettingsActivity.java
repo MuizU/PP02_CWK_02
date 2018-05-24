@@ -20,6 +20,7 @@ import com.service.sos.alpha.chat.data.FriendDB;
 import com.service.sos.alpha.chat.data.GroupDB;
 import com.service.sos.alpha.chat.service.ServiceUtils;
 import com.service.sos.alpha.ui.Help_and_support.HelpActivity;
+import com.service.sos.alpha.ui.map.MapsActivity;
 
 public class SettingsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar toolbar;

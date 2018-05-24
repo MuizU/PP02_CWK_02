@@ -1,6 +1,7 @@
 package com.service.sos.alpha;
 
 import android.content.Context;
+
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -30,11 +31,9 @@ import com.service.sos.alpha.chat.data.StaticConfig;
 import com.service.sos.alpha.chat.service.ServiceUtils;
 import com.service.sos.alpha.chat.ui.FriendsFragment;
 import com.service.sos.alpha.chat.ui.GroupFragment;
-import com.service.sos.alpha.chat.ui.LoginActivity;
 import com.service.sos.alpha.chat.ui.UserProfileFragment;
 import com.service.sos.alpha.ui.Help_and_support.HelpActivity;
-import com.service.sos.alpha.ui.MapsActivity;
-import com.service.sos.alpha.ui.SettingsActivity;
+import com.service.sos.alpha.ui.map.MapsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -172,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 } else {
                     MainActivity.this.finish();
                     // User is signed in
-                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                    startActivity(new Intent(MainActivity.this, com.service.sos.alpha.login.LoginActivity.class));
                     Log.d(TAG, "onAuthStateChanged:signed_out");
                 }
             }
@@ -321,7 +320,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             map.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(map);
         } else if (id == R.id.nav_settings) {
-            Intent settings = new Intent(MainActivity.this, SettingsActivity.class);
+            Intent settings = new Intent(MainActivity.this, com.service.sos.alpha.login.LoginActivity.class);
             settings.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(settings);
         } else if (id == R.id.nav_help) {
