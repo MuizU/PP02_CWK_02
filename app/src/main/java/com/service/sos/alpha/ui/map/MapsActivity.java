@@ -9,15 +9,19 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -29,6 +33,7 @@ import com.service.sos.alpha.chat.service.ServiceUtils;
 import com.service.sos.alpha.ui.Help_and_support.HelpActivity;
 import com.service.sos.alpha.ui.SettingsActivity;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback,NavigationView.OnNavigationItemSelectedListener {
@@ -38,8 +43,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
     private DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("location");
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         toolbar = findViewById(R.id.toolbar);
@@ -71,12 +78,49 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Location loc= new Location();
+                loc.latitude = dataSnapshot.child("latitude").getValue(Double.class);
+                loc.longitude = dataSnapshot.child("longitude").getValue(Double.class);
+                LatLng device = new LatLng(loc.latitude,loc.longitude);
+                mMap.clear();
+                mMap.addMarker(new MarkerOptions().position(device).title("Device Marker").icon(BitmapDescriptorFactory.fromResource(R.drawable.sos_icon)));
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(device));
+            }
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+        });
+        updateMap();
     }
+
+    public void updateMap(){
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Location loc= new Location();
+                loc.latitude = dataSnapshot.child("latitude").getValue(Double.class);
+                loc.longitude = dataSnapshot.child("longitude").getValue(Double.class);
+                LatLng device = new LatLng(loc.latitude,loc.longitude);
+                mMap.clear();
+                mMap.addMarker(new MarkerOptions().position(device).title("Device Marker").icon(BitmapDescriptorFactory.fromResource(R.drawable.sos_icon)));
+                updateMap();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+        });
+    }
+
+
 
     @Override
     public void onBackPressed() {
