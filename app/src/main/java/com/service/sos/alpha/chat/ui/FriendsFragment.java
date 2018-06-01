@@ -282,7 +282,7 @@ public class FriendsFragment extends Fragment implements SwipeRefreshLayout.OnRe
                         .setTopColorRes(R.color.colorPrimary)
                         .setIcon(R.drawable.ic_add_friend)
                         .setTitle("Friend")
-                        .setMessage("User "+userInfo.email + " has been friend")
+                        .setMessage("UserAccount "+userInfo.email + " has been friend")
                         .show();
             } else {
                 addFriend(idFriend, true);
@@ -385,7 +385,7 @@ public class FriendsFragment extends Fragment implements SwipeRefreshLayout.OnRe
     }
 
     /**
-     * User accesses the other UID information
+     * UserAccount accesses the other UID information
      */
     private void getAllFriendInfo(final int index) {
         if (index == listFriendID.size()) {

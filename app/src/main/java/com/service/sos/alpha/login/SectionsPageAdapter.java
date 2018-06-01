@@ -15,6 +15,10 @@ public class SectionsPageAdapter extends FragmentPagerAdapter {
         super(fm);
     }
 
+    public List<Fragment> getmFragmentList() {
+        return mFragmentList;
+    }
+
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {

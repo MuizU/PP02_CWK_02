@@ -33,6 +33,7 @@ import com.service.sos.alpha.chat.ui.FriendsFragment;
 import com.service.sos.alpha.chat.ui.GroupFragment;
 import com.service.sos.alpha.chat.ui.UserProfileFragment;
 import com.service.sos.alpha.ui.Help_and_support.HelpActivity;
+import com.service.sos.alpha.ui.SettingsActivity;
 import com.service.sos.alpha.ui.map.MapsActivity;
 
 import java.util.ArrayList;
@@ -124,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private FirebaseAuth mAuth;//extends object implements internalTokenProvider
     private FirebaseAuth.AuthStateListener mAuthListener;//Listener for change in authentication states
-    private FirebaseUser user;//User of current instance
+    private FirebaseUser user;//UserAccount of current instance
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
@@ -147,11 +148,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.nav_bar);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Toolbar topToolbar = findViewById(R.id.toolbar);
-        if(topToolbar != null) {
-            setSupportActionBar(topToolbar);
-            Objects.requireNonNull(getSupportActionBar()).setTitle("Chat");
-        }
 
         viewPager = findViewById(R.id.viewpager);
         floatButton = findViewById(R.id.fab);
@@ -170,7 +166,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     StaticConfig.UID = user.getUid();
                 } else {
                     MainActivity.this.finish();
-                    // User is signed in
+                    // UserAccount is signed in
                     startActivity(new Intent(MainActivity.this, com.service.sos.alpha.login.LoginActivity.class));
                     Log.d(TAG, "onAuthStateChanged:signed_out");
                 }
@@ -303,7 +299,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         startActivity(intent);
     }
-
     Context context = this;
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -313,14 +308,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             overridePendingTransition(0, 0);
             chat.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(chat);
-
         } else if (id == R.id.nav_map) {
             Intent map = new Intent(MainActivity.this, MapsActivity.class);
             overridePendingTransition(0, 0);
             map.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(map);
         } else if (id == R.id.nav_settings) {
-            Intent settings = new Intent(MainActivity.this, com.service.sos.alpha.login.LoginActivity.class);
+            Intent settings = new Intent(MainActivity.this, SettingsActivity.class);
             settings.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(settings);
         } else if (id == R.id.nav_help) {
@@ -328,12 +322,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             help.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(help);
         } else if (id == R.id.nav_logout) {
-            FirebaseAuth.getInstance().signOut();
-            FriendDB.getInstance(context).dropDB();
-            GroupDB.getInstance(context).dropDB();
-            ServiceUtils.stopServiceFriendChat(context.getApplicationContext(), true);
-            overridePendingTransition(0, 0);
-            finish();
+            try {
+                mAuth.signOut();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         DrawerLayout drawerLayout = findViewById(R.id.chat);
