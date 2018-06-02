@@ -15,14 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "144955130765-umrjbkbnk1kk03u49ec9o173t8jmfvdl.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.service.sos.alpha",
-            "certificate_hash": "b57ebbba26ef7301dd8513080500a8df15482512"
-          }
-        },
-        {
           "client_id": "144955130765-5fmna1i26a9bn5r8g4f9er7c8q78pfs4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -45,10 +37,6 @@
             "package_name": "com.service.sos.alpha",
             "certificate_hash": "532b125b2ad5ecf52005e6c9b6370e08cd9d9c5d"
           }
-        },
-        {
-          "client_id": "144955130765-ioi0p22e790n5itf376hb49t00mntl83.apps.googleusercontent.com",
-          "client_type": 3
         },
         {
           "client_id": "144955130765-ioi0p22e790n5itf376hb49t00mntl83.apps.googleusercontent.com",
@@ -86,10 +74,6 @@
         }
       },
       "oauth_client": [
-        {
-          "client_id": "144955130765-ioi0p22e790n5itf376hb49t00mntl83.apps.googleusercontent.com",
-          "client_type": 3
-        },
         {
           "client_id": "144955130765-ioi0p22e790n5itf376hb49t00mntl83.apps.googleusercontent.com",
           "client_type": 3
