@@ -16,9 +16,12 @@ import com.service.sos.alpha.R;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,7 +34,6 @@ public class SignupActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private FirebaseDatabase mFirebaseDatabase;
     private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
     private DatabaseReference myRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) throws NumberFormatException {
@@ -54,6 +56,7 @@ public class SignupActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.sign_up_progressBar);
 
 
+
             btnSignUp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) throws NumberFormatException {
@@ -73,10 +76,6 @@ public class SignupActivity extends AppCompatActivity {
                          return;
                     }
 
-                    if(nIC.charAt(9)!='v'){
-                        toastMessage("Please enter a valid NIC number!");
-                        return;
-                    }
                      if (TextUtils.isEmpty(mobileNumber)){
                          toastMessage("Enter a mobile number!");
                          return;
@@ -87,10 +86,7 @@ public class SignupActivity extends AppCompatActivity {
                     }
 
 
-                    if (nIC.length() != 10) {
-                        toastMessage("Enter a valid NIC/Passport ID!");
-                        return;
-                    }
+
                     if (TextUtils.isEmpty(nIC)) {
                         toastMessage("Enter a  NIC/Passport ID!");
                         return;
@@ -129,13 +125,15 @@ public class SignupActivity extends AppCompatActivity {
                     mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            FirebaseUser user = task.getResult().getUser();
+
                             mAuth.getCurrentUser().sendEmailVerification();
-                            AddUserInfo(userAccount,myRef,user.getUid());
+
                             if (!task.isSuccessful()) {
                                 Toast.makeText(SignupActivity.this, "Authentication failed." + task.getException(),
                                         Toast.LENGTH_SHORT).show();
                             } else {
+                                FirebaseUser user = task.getResult().getUser();
+                                AddUserInfo(userAccount,myRef,user.getUid());
                                 Toast.makeText(SignupActivity.this, "User is Added", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(SignupActivity.this, MainActivity.class));
                                 finish();
@@ -166,4 +164,6 @@ public class SignupActivity extends AppCompatActivity {
         super.onResume();
         progressBar.setVisibility(View.GONE);
     }
+
+
 }

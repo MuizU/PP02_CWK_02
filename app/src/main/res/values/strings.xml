@@ -28,7 +28,9 @@
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
     <string name="re_enter_hint_password">Confirm Password</string>
-    <string name="nic">Enter NIC or Passport ID</string>
+    <string name="nic">Enter NIC ID</string>
+    <string name="passport">Enter Passport ID</string>
+
     <string name="mob_num">Enter mobile numbers</string>
     <string name="hint_name">Fullname</string>
     <string name="btn_login">LOGIN</string>

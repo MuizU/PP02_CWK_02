@@ -2,6 +2,7 @@ package com.service.sos.alpha.login;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -106,10 +107,10 @@ public class FragmentTab1 extends Fragment{
                                     // there was an error
                                     if (password.length() < 6) {
                                         inputPassword.setError(getString(R.string.minimum_password));
-                                    } else {
-                                        new AlertDialog.Builder(getContext()).setTitle("Email not verified!").show();
                                     }
                                 } else {
+                                    if (auth.getCurrentUser().isEmailVerified()) {
+
                                         DatabaseReference mDatabaseReference = FirebaseDatabase.getInstance().getReference("user");
                                         DatabaseReference databaseReference = mDatabaseReference.child(auth.getCurrentUser().getUid());
                                         DatabaseReference ownerTypeReference = databaseReference.child("account_type");
@@ -130,10 +131,24 @@ public class FragmentTab1 extends Fragment{
 
                                             }
                                         });
+                                    } else {
+                                        new AlertDialog.Builder(getContext()).setTitle("Email not verified!").setMessage("Please verify your email to continue!").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                return;
+                                            }
+                                        }).setNegativeButton("Sign up", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                startActivity(new Intent(getActivity(),SignupActivity.class));
+                                            }
+                                        }).show();
+                                    }
 
                                 }
                             }
                         });
+
             }
         });
         return view;

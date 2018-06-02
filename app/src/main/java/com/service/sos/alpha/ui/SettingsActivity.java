@@ -38,9 +38,9 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
     private Button btnChangeEmail, btnChangePassword, btnRemoveUser,
-            changeEmail, changePassword, sendEmail, remove, inviteFriends, privacy;
+            changeEmail, changePassword, sendEmail, remove, inviteFriends, privacy, nofications;
 
-    private android.widget.EditText oldEmail, newEmail, password, newPassword, nofications;
+    private android.widget.EditText oldEmail, newEmail, password, newPassword;
     private android.widget.ProgressBar progressBar;
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
