@@ -128,6 +128,7 @@ public class SignupActivity extends AppCompatActivity {
 
 
                             if (!task.isSuccessful()) {
+                                progressBar.setVisibility(View.GONE);
                                 Toast.makeText(SignupActivity.this, "Authentication failed." + task.getException(),
                                         Toast.LENGTH_SHORT).show();
                             } else {
