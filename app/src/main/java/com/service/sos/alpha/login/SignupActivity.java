@@ -20,6 +20,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -85,10 +86,7 @@ public class SignupActivity extends AppCompatActivity {
                     }
 
 
-                    if (nIC.length() != 10) {
-                        toastMessage("Enter a valid NIC/Passport ID!");
-                        return;
-                    }
+
                     if (TextUtils.isEmpty(nIC)) {
                         toastMessage("Enter a  NIC/Passport ID!");
                         return;
@@ -166,4 +164,6 @@ public class SignupActivity extends AppCompatActivity {
         super.onResume();
         progressBar.setVisibility(View.GONE);
     }
+
+
 }

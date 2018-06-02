@@ -120,7 +120,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login.SignupActivity" />
+        <activity android:name=".login.SignupActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:ellipsize="end"/>
         <activity android:name=".login.ResetPasswordActivity"></activity>
     </application>
 
