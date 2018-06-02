@@ -128,8 +128,12 @@ public class FragmentTab2 extends Fragment {
                                         new AlertDialog.Builder(getContext()).setTitle("Email not verified!").setMessage("Please verify your email to continue!").setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                             @Override
                                             public void onClick(DialogInterface dialogInterface, int i) {
-                                                //set what would happen when positive button is clicked
                                                 return;
+                                            }
+                                        }).setNegativeButton("Sign up", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                startActivity(new Intent(getActivity(),SignupActivity.class));
                                             }
                                         }).show();
                                     }
