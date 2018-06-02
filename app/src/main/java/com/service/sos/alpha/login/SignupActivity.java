@@ -126,12 +126,12 @@ public class SignupActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
-                            mAuth.getCurrentUser().sendEmailVerification();
 
                             if (!task.isSuccessful()) {
                                 Toast.makeText(SignupActivity.this, "Authentication failed." + task.getException(),
                                         Toast.LENGTH_SHORT).show();
                             } else {
+                                mAuth.getCurrentUser().sendEmailVerification();
                                 FirebaseUser user = task.getResult().getUser();
                                 AddUserInfo(userAccount,myRef,user.getUid());
                                 Toast.makeText(SignupActivity.this, "User is Added", Toast.LENGTH_SHORT).show();
