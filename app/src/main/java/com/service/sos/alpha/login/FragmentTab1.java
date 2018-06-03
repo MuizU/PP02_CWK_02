@@ -52,11 +52,10 @@ public class FragmentTab1 extends Fragment{
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
-        /*if (auth.getCurrentUser() != null) { if user is already logged in
+        if (auth.getCurrentUser() != null) {
             startActivity(new Intent(getActivity(), MainActivity.class));
             getActivity().finish();
         }
-*/
         inputEmail =  view.findViewById(R.id.owner_email);
         inputPassword =  view.findViewById(R.id.owner_password);
         progressBar =  view.findViewById(R.id.owner_progressBar);
