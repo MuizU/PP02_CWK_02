@@ -118,7 +118,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".login.SignupActivity"
-            android:windowSoftInputMode="adjustResize"
+            android:windowSoftInputMode="stateHidden|adjustPan"
             android:ellipsize="end"/>
         <activity android:name=".login.ResetPasswordActivity"/>
     </application>

@@ -63,8 +63,10 @@ public class ResetPasswordActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(ResetPasswordActivity.this, "We have sent you instructions to reset your password!", Toast.LENGTH_SHORT).show();
+                                    progressBar.setVisibility(View.GONE);
                                 } else {
                                     Toast.makeText(ResetPasswordActivity.this, "Failed to reset password!", Toast.LENGTH_SHORT).show();
+                                    progressBar.setVisibility(View.GONE);
                                 }
 
                                 progressBar.setVisibility(View.GONE);

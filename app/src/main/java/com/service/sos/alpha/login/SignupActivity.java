@@ -135,8 +135,8 @@ public class SignupActivity extends AppCompatActivity {
                                 mAuth.getCurrentUser().sendEmailVerification();
                                 FirebaseUser user = task.getResult().getUser();
                                 AddUserInfo(userAccount,myRef,user.getUid());
-                                Toast.makeText(SignupActivity.this, "User is Added", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(SignupActivity.this, MainActivity.class));
+                                Toast.makeText(SignupActivity.this, "Account created please verify email", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(SignupActivity.this, LoginActivity.class));
                                 finish();
                             }
                         }

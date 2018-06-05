@@ -24,14 +24,8 @@
         android:theme="@style/AppTheme.AppBarOverlay"
         app:elevation="0dp">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar_settings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
+      <include layout="@layout/toolbar_layout"
+          android:id="@+id/toolbar_settings"/>
     </android.support.design.widget.AppBarLayout>
 
 
@@ -44,7 +38,14 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <EditText
             android:id="@+id/old_email"
             android:layout_width="match_parent"
@@ -197,7 +198,8 @@
             android:layout_marginTop="16dp"
             android:text="@string/invite_friends"
             android:textStyle="bold" />
-
+    </LinearLayout>
+    </ScrollView>
 
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>
