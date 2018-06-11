@@ -85,7 +85,7 @@ auth = FirebaseAuth.getInstance();
                 if (user == null) {
                     // user auth state is changed - user is null
                     // launch login activity
-                    startActivity(new Intent(SettingsActivity.this, com.service.sos.alpha.login.LoginActivity.class));
+                    startActivity(new Intent(SettingsActivity.this, com.service.sos.alpha.chat.ui.LoginActivity.class));
                     finish();
                 }
             }
@@ -227,7 +227,7 @@ final String message = "Are you sure you want to delete your account?";
                                 public void onComplete(@NonNull com.google.android.gms.tasks.Task<Void> task) {
                                     if (task.isSuccessful()) {
                                         android.widget.Toast.makeText(SettingsActivity.this, "Your profile is deleted:( Create a account now!", android.widget.Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(SettingsActivity.this, com.service.sos.alpha.login.SignupActivity.class));
+                                        startActivity(new Intent(SettingsActivity.this, com.service.sos.alpha.chat.ui.LoginActivity.class));
                                         finish();
                                         progressBar.setVisibility(View.GONE);
                                     } else {

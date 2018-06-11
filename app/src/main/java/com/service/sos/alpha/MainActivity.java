@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 } else {
                     MainActivity.this.finish();
                     // UserAccount is signed in
-                    startActivity(new Intent(MainActivity.this, com.service.sos.alpha.login.LoginActivity.class));
+                    startActivity(new Intent(MainActivity.this, com.service.sos.alpha.chat.ui.LoginActivity.class));
                     Log.d(TAG, "onAuthStateChanged:signed_out");
                 }
             }

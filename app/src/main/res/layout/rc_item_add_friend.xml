@@ -25,8 +25,8 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="bottom"
-            android:text="Nguyen Binh"
-            android:textAppearance="?android:attr/textAppearanceMedium"/>
+            android:text="Sanjula"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
             android:id="@+id/txtEmail"
@@ -34,8 +34,8 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="top"
-            android:text="Nguyen Binh"
-            android:textAppearance="?android:attr/textAppearanceSmall"/>
+            android:text="Sanjula"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
     </LinearLayout>
 
     <CheckBox

@@ -99,4 +99,6 @@
     <string name="tab_text_3">Tab 3</string>
     <string name="title_activity_something">SomethingActivity</string>
     <string name="title_activity_example">Example</string>
+    <string name="group_image">Group Image</string>
+    <string name="create_group">Create group</string>
 </resources>
